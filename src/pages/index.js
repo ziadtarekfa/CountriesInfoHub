@@ -18,13 +18,13 @@ export default function Home() {
 
   return (
     <main>
-      <header className='flex justify-between py-2 px-6'>
-        <h2>Where in the world</h2>
-        <button className='bg-transparent'>Dark Mode</button>
+      <header className='flex justify-between items-center py-8 px-6 bg-white shadow-md'>
+        <h2 className='font-bold'>Where in the world?</h2>
+        <button className='bg-transparent font-semibold'>Dark Mode</button>
       </header>
-      <div className='flex justify-between h-10 px-4 mt-2'>
-        <input placeholder="Search for a country" id="search"></input>
-        <select id="region-selector">
+      <div className='flex flex-col justify-between h-36 px-4 mt-6'>
+        <input className='p-3 rounded-md' placeholder="Search for a country" id="search"></input>
+        <select className='p-3 pr-0 rounded-md w-[60%]' id="region-selector">
           <option defaultValue>Filter by Region</option>
           <option>Africa</option>
           <option>America</option>
@@ -34,8 +34,7 @@ export default function Home() {
         </select>
       </div>
 
-      <button>Back</button>
-      <div>
+      <div className='px-10'>
         {
           countries.map((country, index) => {
             return (
@@ -43,7 +42,6 @@ export default function Home() {
             );
           })
         }
-        {/* countries container */}
       </div>
     </main>
   )
