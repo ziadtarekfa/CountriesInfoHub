@@ -1,9 +1,10 @@
 import Image from "next/image";
 const CountryCard = ({ country }) => {
     return (
-        <div className="mt-8 relative">
 
-            <Image className=" w-full h-full rounded-t-md" src={country.flags.svg} alt="flag"
+        <div className="mt-8 max-w-sm justify-self-center hover:cursor-pointer w-96">
+
+            <Image className=" w-full object-cover h-48 rounded-t-md" src={country.flags.svg} alt="flag"
                 width={200} height={200} />
 
             <div className="p-10 bg-white rounded-b-md">
@@ -13,6 +14,7 @@ const CountryCard = ({ country }) => {
                 <p><span className="font-semibold">Capital: </span>{country.capital}</p>
             </div>
         </div>
+
     );
 }
 
