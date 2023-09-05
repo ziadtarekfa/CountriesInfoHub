@@ -1,18 +1,14 @@
-import { useEffect, useState } from 'react'
 import CountryCard from '@/components/CountryCard';
 
+export const getStaticProps = async () => {
+  const response = await fetch("https://restcountries.com/v2/all");
+  const countries = await response.json();
+  return { props: { countries } }
+}
 
 
-export default function Home() {
+export default function Home({ countries }) {
 
-  const [countries, setCountries] = useState([]);
-  useEffect(() => {
-    fetch("https://restcountries.com/v2/all").then((response) => {
-      return response.json();
-    }).then((data) => {
-      setCountries(data);
-    })
-  }, []);
 
   return (
     <main>
@@ -29,7 +25,7 @@ export default function Home() {
         </select>
       </div>
 
-      <div className='px-10 grid grid-cols-1 grid-rows-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-10 gap-y-10'>
+      <div className='px-10 pb-12 grid grid-cols-1 grid-rows-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-10 gap-y-10'>
         {
           countries.map((country, index) => {
             return (
