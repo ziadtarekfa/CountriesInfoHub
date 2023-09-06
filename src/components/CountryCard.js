@@ -3,8 +3,8 @@ import Link from "next/link";
 const CountryCard = ({ country }) => {
     return (
 
-        <Link href={country.name}>
-            <div className="mt-8 max-w-sm justify-self-center hover:cursor-pointer w-96">
+        <Link className="justify-self-center" href={country.name}>
+            <div className="mt-8 max-w-sm  hover:cursor-pointer w-96">
 
                 <Image className=" w-full object-cover h-48 rounded-t-md" src={country.flags.svg} alt="flag"
                     width={200} height={200} />
